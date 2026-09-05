@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umrah Cost Calculator | Al-Rifah Tours</title>
+    <meta name="description" content="Calculate your Umrah package cost with Al-Rifah Tours Umrah Cost Calculator. Get instant estimates for Hajj, Umrah and Ziyarah packages.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="tel:+918297885782"><i class="fas fa-phone"></i> +91 82978 85782</a>
+                <a href="mailto:office@alrifahtours.com"><i class="fas fa-envelope"></i> office@alrifahtours.com</a>
+            </div>
+            <div class="top-bar-right">
+                <a href="umrah-cost-calculator.html" class="btn-calculator"><i class="fas fa-calculator"></i> Umrah Cost Calculator</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Al-Rifah Tours</span>
+                </a>
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#packages">Packages</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Umrah Cost <em>Calculator</em></h1>
+            <p>Plan your budget with our easy-to-use Umrah cost estimator</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-wrapper">
+                <form id="umrahCalculator" class="calc-form">
+
+                    <!-- Step 1: Travelers -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-users"></i> Traveler Details</h3>
+                        
+                        <div class="calc-field">
+                            <label for="leadPaxName">Lead Pax Name <span class="required">*</span></label>
+                            <input type="text" id="leadPaxName" placeholder="Enter the name of the primary traveler" required>
+                            <small>The main contact for this booking.</small>
+                        </div>
+
+                        <div class="calc-row">
+                            <div class="calc-field">
+                                <label for="adults">Adults (8+ years) <span class="required">*</span></label>
+                                <div class="quantity-control">
+                                    <button type="button" class="qty-btn minus" data-target="adults">−</button>
+                                    <input type="number" id="adults" value="1" min="1" max="9">
+                                    <button type="button" class="qty-btn plus" data-target="adults">+</button>
+                                </div>
+                                <small>Number of adults traveling.</small>
+                            </div>
+                            <div class="calc-field">
+                                <label for="children">Children (2-8 years)</label>
+                                <div class="quantity-control">
+                                    <button type="button" class="qty-btn minus" data-target="children">−</button>
+                                    <input type="number" id="children" value="0" min="0" max="2">
+                                    <button type="button" class="qty-btn plus" data-target="children">+</button>
+                                </div>
+                                <small>₹69,999/child (No Bed No Food)</small>
+                            </div>
+                            <div class="calc-field">
+                                <label for="infants">Infants (below 23 months)</label>
+                                <div class="quantity-control">
+                                    <button type="button" class="qty-btn minus" data-target="infants">−</button>
+                                    <input type="number" id="infants" value="0" min="0" max="2">
+                                    <button type="button" class="qty-btn plus" data-target="infants">+</button>
+                                </div>
+                                <small>₹29,999/infant (Discounted Fare)</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Package Sharing -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-bed"></i> Package Sharing Type</h3>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="sharing" value="4" checked>
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Quad <small>(4 Beds in one Room)</small></span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="sharing" value="3">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Triplet <small>(3 Beds in one Room)</small></span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="sharing" value="2">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Twin <small>(2 Beds in one Room)</small></span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="sharing" value="1">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Single <small>(Single Bedroom)</small></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Visa -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-passport"></i> Umrah Visa With Insurance</h3>
+                        <div class="calc-field">
+                            <select id="visa">
+                                <option value="16000">Required - ₹16,000</option>
+                                <option value="0">No, I Already Have Visa</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Transportation -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-bus"></i> Type of Transportation</h3>
+                        <div class="calc-field">
+                            <select id="transport">
+                                <option value="42500">Sharing Bus for Groups - ₹42,500</option>
+                                <option value="60000">Private Car for Small Family - ₹60,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Makkah Accommodation -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-kaaba"></i> Makkah Accommodation</h3>
+                        <p class="calc-group-desc">Select your hotel in Makkah. Prices are per night per room.</p>
+                        
+                        <div class="calc-field">
+                            <label for="makkahHotel">Hotel in Makkah</label>
+                            <select id="makkahHotel">
+                                <option value="2000">Durrat Al Akhyar - ₹2,000/night</option>
+                                <option value="2300">Asrar Al Garbia - ₹2,300/night</option>
+                                <option value="2400">Jadda Khalil - ₹2,400/night</option>
+                                <option value="4000">Zad Ajyad Makkah - ₹4,000/night</option>
+                                <option value="5000">Al Olayan Palace - ₹5,000/night</option>
+                                <option value="7000">Castle Ajyad - ₹7,000/night</option>
+                                <option value="7000">Nada Al Majd - ₹7,000/night</option>
+                                <option value="12000">Saif Al Majid - ₹12,000/night</option>
+                                <option value="11000">Mohajrein Majd - ₹11,000/night</option>
+                                <option value="12000">Trust Ajyad - ₹12,000/night</option>
+                                <option value="15000">Al Olayan Al Khalil - ₹15,000/night</option>
+                                <option value="25000">Elaf Ajyad - ₹25,000/night</option>
+                                <option value="35000">Swissotel Makkah - ₹35,000/night</option>
+                                <option value="30000">Makkah Hotel - ₹30,000/night</option>
+                                <option value="30000">Makkah Clock Royal Tower, Fairmont - ₹30,000/night</option>
+                            </select>
+                        </div>
+
+                        <div class="calc-field">
+                            <label for="makkahNights">Makkah Stay (Nights)</label>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn minus" data-target="makkahNights">−</button>
+                                <input type="number" id="makkahNights" value="4" min="1" max="30">
+                                <button type="button" class="qty-btn plus" data-target="makkahNights">+</button>
+                            </div>
+                            <small>Number of nights you will stay in Makkah.</small>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Madinah Accommodation -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-mosque"></i> Madinah Accommodation</h3>
+
+                        <div class="calc-field">
+                            <label for="madinahHotel">Hotel in Madinah</label>
+                            <select id="madinahHotel">
+                                <option value="3500">Saeeda Ubaida - ₹3,500/night</option>
+                                <option value="4000">Luzin Golden - ₹4,000/night</option>
+                                <option value="5000">Atiyaf Almasi Hotel - ₹5,000/night</option>
+                                <option value="8000">Mona Salaam - ₹8,000/night</option>
+                                <option value="9000">Grand Zowar - ₹9,000/night</option>
+                                <option value="10000">Al Mukhtara Golden Hotel - ₹10,000/night</option>
+                                <option value="12000">Arjwan Rose Hotel - ₹12,000/night</option>
+                                <option value="13000">Amjad Al Salam Hotel - ₹13,000/night</option>
+                                <option value="14000">Rawda Al Mukhtara - ₹14,000/night</option>
+                                <option value="20000">Karam Al Madinah - ₹20,000/night</option>
+                                <option value="25000">Mirage Al Salam Hotel - ₹25,000/night</option>
+                                <option value="25000">Taiba Front - ₹25,000/night</option>
+                                <option value="35000">Pullman Zamzam - ₹35,000/night</option>
+                                <option value="35000">Anwar Al Madinah Movenpick - ₹35,000/night</option>
+                            </select>
+                        </div>
+
+                        <div class="calc-field">
+                            <label for="madinahNights">Madinah Stay (Nights)</label>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn minus" data-target="madinahNights">−</button>
+                                <input type="number" id="madinahNights" value="4" min="1" max="30">
+                                <button type="button" class="qty-btn plus" data-target="madinahNights">+</button>
+                            </div>
+                            <small>Number of nights you will stay in Madinah.</small>
+                        </div>
+                    </div>
+
+                    <!-- Step 7: Laundry -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-shirt"></i> Laundry Service</h3>
+                        <div class="calc-field">
+                            <label for="laundry">Number of Laundries (₹1,000 each)</label>
+                            <div class="range-slider-wrapper">
+                                <input type="range" id="laundry" min="0" max="10" value="0" class="range-slider">
+                                <div class="range-value"><span id="laundryValue">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 8: Free Gifts -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-gift"></i> Free Gifts & Services</h3>
+                        <p class="calc-group-desc">No extra cost — these come with every Umrah package</p>
+                        <div class="checkbox-grid free-gifts">
+                            <label class="checkbox-option checked-free">
+                                <input type="checkbox" checked disabled>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">5L Zamzam Water <small>Return Pickup – Jeddah Airport</small></span>
+                            </label>
+                            <label class="checkbox-option checked-free">
+                                <input type="checkbox" checked disabled>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Al-Rifah Umrah Kit <small>Pickup from Office</small></span>
+                            </label>
+                            <label class="checkbox-option checked-free">
+                                <input type="checkbox" checked disabled>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Makkah Ziyarat in Muallim Bus <small>Group Ziyarats with guide</small></span>
+                            </label>
+                            <label class="checkbox-option checked-free">
+                                <input type="checkbox" checked disabled>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Madinah Ziyarat in Muallim Bus <small>Group Ziyarats with guide</small></span>
+                            </label>
+                            <label class="checkbox-option checked-free">
+                                <input type="checkbox" checked disabled>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Special Umrah Dua Cards <small>Curated and written by scholars</small></span>
+                            </label>
+                            <label class="checkbox-option checked-free">
+                                <input type="checkbox" checked disabled>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">WhatsApp Support Group <small>Stay in touch during Umrah</small></span>
+                            </label>
+                            <label class="checkbox-option checked-free">
+                                <input type="checkbox" checked disabled>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Umrah Completion Certificate <small>Framed Certificate</small></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 9: Spiritual Essentials -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-hands-praying"></i> Spiritual Essentials</h3>
+                        <p class="calc-group-desc">Extra guidance and deeper spiritual experience</p>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="spiritual" value="2500">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">2 Set of Ihram <small>Good Quality Ihram - ₹2,500</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="spiritual" value="999">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Taif Ziyarat in Muallim Bus <small>Luxury AC bus with guide - ₹999</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="spiritual" value="999">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Badr Ziyarat (enroute Makkah to Madinah) <small>₹999</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="spiritual" value="1999">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">One-on-One Session with Mufti Sahab <small>Personal session - ₹1,999</small></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 10: Complete Comfort -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-couch"></i> Complete Comfort</h3>
+                        <p class="calc-group-desc">Add comfort, ease, and convenience to your journey</p>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="comfort" value="5000">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Umrah Guide for First Umrah <small>Dedicated guide - ₹5,000</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="comfort" value="10000">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Meet & Greet service at airport <small>₹10,000</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="comfort" value="4999">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Airline seat selection support <small>₹4,999</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="comfort" value="10000">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Excess baggage support <small>Inform 3 days in advance - ₹10,000</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="comfort" value="9999">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">On-Demand Room Service <small>Cleaning & toiletries - ₹9,999</small></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 11: Premium Experience -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-crown"></i> Premium Experience</h3>
+                        <p class="calc-group-desc">For premium pilgrims who want more than just rituals</p>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="premium" value="2000">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Ghaar-e-Hira Museum Tour <small>₹2,000</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="premium" value="3000">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Kiswah Factory Visit <small>Exclusive appointment - ₹3,000</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="premium" value="9999">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Clock Tower Museum + Roof Access <small>120th floor panoramic views - ₹9,999</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="premium" value="2000">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Al-Awsiya Bird Sanctuary Tour <small>Near Masjid Quba - ₹2,000</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="premium" value="2999">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Local Saudi SIM card with data & calling <small>₹2,999</small></span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="premium" value="10000">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">One Day Jeddah City Tour <small>₹10,000</small></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 12: Air Tickets -->
+                    <div class="calc-group">
+                        <h3 class="calc-group-title"><i class="fas fa-plane"></i> Air Tickets</h3>
+                        <p class="calc-group-desc">Select 'Yes' if you want us to arrange your Air Tickets.</p>
+                        
+                        <div class="radio-group inline-radio">
+                            <label class="radio-option">
+                                <input type="radio" name="airTickets" value="yes">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Yes, arrange my tickets</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="airTickets" value="no" checked>
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">No, I will book on my own</span>
+                            </label>
+                        </div>
+
+                        <div class="air-ticket-details" id="airTicketDetails" style="display: none;">
+                            <div class="calc-row">
+                                <div class="calc-field">
+                                    <label for="airline">Select Airlines</label>
+                                    <select id="airline">
+                                        <option value="42000">IndiGo Airlines - ₹42,000</option>
+                                        <option value="50000">Air India - ₹50,000</option>
+                                        <option value="60000">Saudi Airlines - ₹60,000</option>
+                                        <option value="41000">Akasa Airlines - ₹41,000</option>
+                                        <option value="38000">Jazeera Airways - ₹38,000</option>
+                                        <option value="38000">Etihad Airways - ₹38,000</option>
+                                        <option value="37000">Gulf Airways - ₹37,000</option>
+                                        <option value="34000">Oman Airways - ₹34,000</option>
+                                        <option value="70000">Air India Business Class - ₹70,000</option>
+                                        <option value="90000">Saudi Airlines Business Class - ₹90,000</option>
+                                    </select>
+                                </div>
+                                <div class="calc-field">
+                                    <label for="airport">Nearest Airport</label>
+                                    <select id="airport">
+                                        <option value="2000">New Delhi - ₹2,000</option>
+                                        <option value="10000">Lucknow - ₹10,000</option>
+                                        <option value="1000">Mumbai - ₹1,000</option>
+                                        <option value="15000">Guwahati - ₹15,000</option>
+                                        <option value="15000">Srinagar - ₹15,000</option>
+                                        <option value="7000">Bangalore - ₹7,000</option>
+                                        <option value="2000">Hyderabad - ₹2,000</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <div class="calc-action">
+                        <button type="button" id="calculateBtn" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calculator"></i> Calculate Cost
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Results Section -->
+                <div class="calc-results" id="calcResults" style="display: none;">
+                    <div class="results-header">
+                        <h3><i class="fas fa-receipt"></i> Your Umrah Cost Estimate</h3>
+                        <button type="button" class="btn btn-sm" id="recalculateBtn"><i class="fas fa-redo"></i> Recalculate</button>
+                    </div>
+
+                    <div class="results-breakdown">
+                        <div class="breakdown-item">
+                            <span>Visa & Insurance</span>
+                            <span id="resultVisa">₹0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Transportation (per person)</span>
+                            <span id="resultTransport">₹0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Makkah Hotel (per person)</span>
+                            <span id="resultMakkah">₹0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Madinah Hotel (per person)</span>
+                            <span id="resultMadinah">₹0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Full Board Meals</span>
+                            <span id="resultMeals">₹0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Laundry Service</span>
+                            <span id="resultLaundry">₹0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Spiritual Essentials</span>
+                            <span id="resultSpiritual">₹0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Complete Comfort</span>
+                            <span id="resultComfort">₹0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Premium Experience</span>
+                            <span id="resultPremium">₹0</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Air Fare</span>
+                            <span id="resultAirfare">₹0</span>
+                        </div>
+                        <div class="breakdown-item subtotal">
+                            <span>Per Adult Cost</span>
+                            <span id="resultPerAdult">₹0</span>
+                        </div>
+                        <div class="breakdown-item" id="childRow" style="display: none;">
+                            <span>Children Cost</span>
+                            <span id="resultChildren">₹0</span>
+                        </div>
+                        <div class="breakdown-item" id="infantRow" style="display: none;">
+                            <span>Infants Cost</span>
+                            <span id="resultInfants">₹0</span>
+                        </div>
+                        <div class="breakdown-item total">
+                            <span>Total Estimated Cost</span>
+                            <span id="resultTotal">₹0</span>
+                        </div>
+                    </div>
+
+                    <div class="results-note">
+                        <p><i class="fas fa-info-circle"></i> This is an estimated cost. Final pricing may vary based on availability and season. Contact us for a confirmed quote.</p>
+                    </div>
+
+                    <div class="results-actions">
+                        <a href="https://wa.me/918297885782?text=I used the Umrah Cost Calculator and would like to discuss my package." class="btn btn-whatsapp btn-lg">
+                            <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3 class="footer-logo">Al-Rifah Tours</h3>
+                    <div class="footer-contact-info">
+                        <p><i class="fas fa-phone"></i> <a href="tel:+918297885782">+91 82978 85782</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Proddatur, Andhra Pradesh - 516360</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:office@alrifahtours.com">office@alrifahtours.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Latest Umrah Packages</a></li>
+                        <li><a href="#">VIP Hajj Packages</a></li>
+                        <li><a href="#">Umrah Badal</a></li>
+                        <li><a href="#">Umrah Land Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms Of Use</a></li>
+                        <li><a href="#">Payments and Refund Policy</a></li>
+                        <li><a href="#">B2B Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Al-Rifah Tours. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/918297885782" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
