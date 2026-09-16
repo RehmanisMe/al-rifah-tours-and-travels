@@ -1,5 +1,19 @@
 {
-  "dependencies": {
-    "firebase": "^12.15.0"
+  "name": "al-rifah-tours-and-travels",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static marketing site and Umrah cost calculator for Al Rifah Travels Pvt Ltd",
+  "type": "module",
+  "scripts": {
+    "serve": "firebase serve --only hosting",
+    "test": "node tools/verify-pricing-parity.mjs",
+    "check:links": "node tools/check-links.mjs",
+    "build:brand": "node tools/gen-brand-assets.mjs",
+    "deploy": "firebase deploy --only hosting",
+    "deploy:rules": "firebase deploy --only firestore:rules"
+  },
+  "devDependencies": {
+    "png-to-ico": "3.0.2",
+    "sharp": "0.35.4"
   }
 }

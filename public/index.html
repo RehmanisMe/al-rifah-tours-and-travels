@@ -5,19 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Umrah With Al-Rifah Tours</title>
     <meta name="description" content="IATA Accredited Hajj, Umrah and Ziyarah Company - Al-Rifah Tours">
+
+    <!-- Favicons / App Icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#1a1a2e">
+
+    <!-- Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Al Rifah Travels Pvt Ltd">
+    <meta property="og:title" content="Umrah With Al Rifah Travels Pvt Ltd">
+    <meta property="og:description" content="IATA Accredited Hajj, Umrah and Ziyarah Company - Al Rifah Travels Pvt Ltd">
+    <meta property="og:url" content="https://al-rifah.web.app/">
+    <meta property="og:image" content="https://al-rifah.web.app/assets/images/og-image-al-rifah-travels.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Umrah With Al Rifah Travels Pvt Ltd">
+    <meta name="twitter:description" content="IATA Accredited Hajj, Umrah and Ziyarah Company - Al Rifah Travels Pvt Ltd">
+    <meta name="twitter:image" content="https://al-rifah.web.app/assets/images/og-image-al-rifah-travels.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader">
+            <img src="assets/images/logo-al-rifah-travels.png" alt="Al Rifah Travels Pvt Ltd" class="loader-logo" width="818" height="439">
             <div class="spinner"></div>
-            <p>Al-Rifah Tours</p>
         </div>
     </div>
 
@@ -38,8 +61,9 @@
     <header class="site-header" id="header">
         <div class="container">
             <div class="header-inner">
-                <a href="#" class="logo">
-                    <span class="logo-text">Al-Rifah Tours</span>
+                <a href="#" class="logo" aria-label="Al Rifah Travels Pvt Ltd - Home">
+                    <img src="assets/images/logo-al-rifah-travels.png" alt="Al Rifah Travels Pvt Ltd" class="logo-img logo-img-full" width="818" height="439">
+                    <img src="assets/images/logo-al-rifah-emblem-96.png" alt="" aria-hidden="true" class="logo-img logo-img-mark" width="96" height="96">
                 </a>
                 <nav class="main-nav" id="mainNav">
                     <ul class="nav-menu">
@@ -465,7 +489,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col footer-about">
-                    <h3 class="footer-logo">Al-Rifah Tours</h3>
+                    <h3 class="footer-logo">
+                        <img src="assets/images/logo-al-rifah-travels.png" alt="Al Rifah Travels Pvt Ltd" class="footer-logo-img" width="818" height="439">
+                    </h3>
                     <div class="footer-contact-info">
                         <p><i class="fas fa-phone"></i> <a href="tel:+918297885782">+91 82978 85782</a></p>
                         <p><i class="fas fa-map-marker-alt"></i> Proddatur, Andhra Pradesh - 516360</p>
@@ -529,46 +555,6 @@
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script type="module">
-        import { saveEnquiry } from './firebase-config.js';
-
-        const leadForm = document.getElementById('leadForm');
-        if (leadForm) {
-            leadForm.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                const submitBtn = leadForm.querySelector('.btn-submit-enquiry');
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'Submitting...';
-                submitBtn.disabled = true;
-
-                const formData = {
-                    depart_from: document.getElementById('depart-from').value,
-                    travel_date: document.getElementById('travel-date').value,
-                    makkah_nights: document.getElementById('makkah-nights').value,
-                    madinah_nights: document.getElementById('madinah-nights').value,
-                    adults: document.getElementById('adults').value,
-                    children: document.getElementById('children').value,
-                    accommodation: document.getElementById('accommodation').value,
-                    rooms: document.getElementById('rooms').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value
-                };
-
-                const result = await saveEnquiry(formData);
-
-                if (result.success) {
-                    alert('Thank you! Your enquiry has been submitted successfully. We will contact you soon.');
-                    leadForm.reset();
-                } else {
-                    alert('Something went wrong. Please try again or contact us directly.');
-                }
-
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
-        }
-    </script>
+    <script type="module" src="scripts/home.page.js"></script>
 </body>
 </html>

@@ -97,6 +97,16 @@ img {
     text-align: center;
 }
 
+/* On the dark preloader the "screen" blend drops the artwork's black
+   background away, leaving just the gold mark on the page colour. */
+.loader-logo {
+    width: 260px;
+    max-width: 70vw;
+    height: auto;
+    margin: 0 auto 26px;
+    mix-blend-mode: screen;
+}
+
 .spinner {
     width: 50px;
     height: 50px;
@@ -192,8 +202,35 @@ img {
 .logo {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
+/* The logo artwork is gold on solid black, so on the white header it sits on a
+   black plate. The plate colour matches the artwork background, which makes the
+   edges seamless instead of showing a hard rectangle. */
+.logo-img {
+    height: 56px;
+    width: auto;
+    background: #000;
+    padding: 7px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(184, 134, 11, 0.35);
+    transition: var(--transition);
+}
+
+/* Full lockup on desktop, emblem only on small screens where the
+   "Travels Pvt Ltd" tagline would be too small to read. */
+.logo-img-mark {
+    display: none;
+    padding: 5px;
+}
+
+.logo:hover .logo-img {
+    border-color: var(--gold);
+    box-shadow: 0 4px 18px rgba(184, 134, 11, 0.3);
+}
+
+/* Retained so any remaining text logo still renders on brand. */
 .logo-text {
     font-family: var(--font-heading);
     font-size: 1.6rem;
@@ -1005,6 +1042,15 @@ img {
     font-size: 1.8rem;
     color: var(--gold);
     margin-bottom: 20px;
+    line-height: 1;
+}
+
+/* Same "screen" treatment as the preloader, since the footer is also dark. */
+.footer-logo-img {
+    width: 230px;
+    max-width: 100%;
+    height: auto;
+    mix-blend-mode: screen;
 }
 
 .footer-contact-info p {
@@ -1198,6 +1244,11 @@ img {
    RESPONSIVE DESIGN
    ======================================== */
 @media (max-width: 1024px) {
+    .logo-img {
+        height: 48px;
+        padding: 6px 12px;
+    }
+
     .nav-menu > li > a {
         padding: 8px 10px;
         font-size: 0.85rem;
@@ -1220,6 +1271,25 @@ img {
 @media (max-width: 768px) {
     .top-bar {
         display: none;
+    }
+
+    /* Keeps the header exactly 60px tall, which is what the mobile
+       nav panel below is positioned against. */
+    .header-inner {
+        padding: 8px 0;
+    }
+
+    .logo-img-full {
+        display: none;
+    }
+
+    .logo-img-mark {
+        display: block;
+        height: 44px;
+    }
+
+    .footer-logo-img {
+        width: 200px;
     }
 
     .mobile-toggle {
